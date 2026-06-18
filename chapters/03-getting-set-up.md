@@ -93,9 +93,13 @@ and so on), not just Python libraries. A "channel" is simply a repository Conda
 downloads packages from; you will use two: `conda-forge` (general software) and
 `bioconda` (biology tools).
 
-> **Mamba** is a drop-in, much faster reimplementation of Conda; wherever you
+> **Mamba** is a drop-in, much faster reimplementation of Conda: wherever you
 > would type `conda`, you can type `mamba` and get the same result sooner.
-> Modern Conda installations include it. We use `mamba` below.
+> Recent Conda has adopted Mamba's fast solver as its default, so plain `conda`
+> is now much faster as well, and the standalone `mamba` command ships with the
+> Miniforge installer — the recommended way to obtain Conda for bioinformatics.
+> If a machine has only `conda`, every `mamba` command below works the same with
+> `conda` substituted. We use `mamba` below.
 
 Here is the whole setup. First create an environment containing Snakemake:
 

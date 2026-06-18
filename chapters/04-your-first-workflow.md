@@ -231,7 +231,7 @@ rule report:
         "echo 'sampleA: '$(cat {input})' reads' > {output}"
 ```
 
-Thirteen lines, and every idea from Chapter 2 is in there: rules with
+Seventeen lines, and every idea from Chapter 2 is in there: rules with
 inputs/outputs/recipes, a DAG chained through matching filenames, a target that
 drives the build, and timestamp-based rebuilds. You can delete the entire
 `results/` directory and reproduce it exactly with one command — the smallest
