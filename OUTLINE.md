@@ -64,11 +64,14 @@ The motivating chapter. No Snakemake yet — first establish the pain it removes
   software niceties; brief connection to the replication conversation in the
   life sciences.
 - What a **workflow management system** is and the landscape (Make, Nextflow,
-  WDL/Cromwell, CWL) — why this book is about Snakemake.
+  WDL/Cromwell, CWL) — why this book is about Snakemake, including that it is a
+  Python-based tool, which fits a group that already works heavily in Python.
 - *Concepts introduced:* pipeline, reproducibility, provenance, dependency,
   intermediate file.
-- *Code:* a deliberately fragile `bash` script as a "before" picture.
-- *References:* reproducibility in computational biology; the Snakemake paper.
+- *Code:* a deliberately fragile `bash` script (an RNA-seq quantification run)
+  as a "before" picture.
+- *References:* reproducibility in computational biology; the Snakemake paper;
+  RNA-seq best-practices literature.
 
 ### Chapter 2 — How Snakemake Thinks: Files, Rules, and the DAG
 *File: `chapters/02-how-snakemake-thinks.md`*
@@ -251,8 +254,9 @@ From one Snakefile to a maintainable, shareable codebase.
 
 Synthesis. Build a small but realistic pipeline using everything so far.
 
-- A compact, recognizable genomics workflow (e.g. quality control → alignment →
-  a summary), at a scale a reader can actually run.
+- A compact, recognizable **RNA-seq** workflow (quality control → alignment or
+  pseudoalignment → quantification → a summary table/report), at a scale a
+  reader can actually run.
 - Driven by a config file and sample sheet, with per-rule conda environments,
   logging, and a generated report — i.e. "how we actually write pipelines."
 - A guided tour of each rule and how the DAG connects them, then running it and
@@ -297,8 +301,9 @@ Snakemake Wrapper Repository.
 
 ## Design notes (for authors of this book)
 
-- **One running example** threads through Chapters 4–12 so concepts accrete
-  rather than reset each chapter.
+- **One running example** — a small **RNA-seq** quantification pipeline —
+  threads through Chapters 4–12 so concepts accrete rather than reset each
+  chapter.
 - **Define jargon at first use** and again in the glossary; assume bio basics
   but not sequencing-specific vocabulary, and assume CS basics but not Python
   fluency.
