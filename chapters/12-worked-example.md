@@ -7,10 +7,10 @@ This chapter introduces no new ideas. Its job is synthesis: to assemble the
 concepts and practices from the previous eleven chapters into one complete,
 realistic RNA-seq quantification pipeline — the kind of project you will open on
 your first week in the lab. We will build it the way we actually build pipelines:
-modular, configuration-driven, with a conda environment, a log, and resources on
-every rule. Then we will tour each piece, run it, and look at what comes out. Where
-a feature appears, the chapter it came from is noted in parentheses, so this doubles
-as a review.
+modular, configuration-driven, with a conda environment and a log on every rule
+and resource declarations on the heavy ones. Then we will tour each piece, run it,
+and look at what comes out. Where a feature appears, the chapter it came from is
+noted in parentheses, so this doubles as a review.
 
 ## What the pipeline does
 
@@ -25,10 +25,13 @@ stages:
 4. **Aggregate** the per-sample results into a single counts matrix, and summarize
    the QC across all samples with **MultiQC**.
 
-> We quantify with **Salmon**,[1] which uses *pseudoalignment*: rather than working
-> out each read's exact position in the genome (slow), it rapidly determines which
-> transcript each read is *compatible* with — enough to count expression, and fast
-> enough to run many samples on modest hardware. **MultiQC**[2] gathers the
+> We quantify with **Salmon**,[1] which skips slow, exact alignment in favor of a
+> fast *lightweight-mapping* approach: rather than pinning down each read's exact
+> position in the genome, it rapidly works out which transcript each read is
+> *compatible* with — enough to count expression, and fast enough to run many
+> samples on modest hardware. (Salmon's particular technique is called **selective
+> alignment**; kallisto's closely related **pseudoalignment** is the better-known
+> name for this family of alignment-free methods.) **MultiQC**[2] gathers the
 > per-sample QC outputs into one tidy report. Both are standard, current tools; this
 > is a realistic pipeline, not a toy.
 

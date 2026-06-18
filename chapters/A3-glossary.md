@@ -146,7 +146,9 @@ expensive results. [10]
 tools, versions, and parameters. [1]
 
 **Pseudoalignment** — rapidly determining which transcript a read is compatible
-with, rather than its exact position; used by Salmon for fast quantification. [12]
+with, rather than its exact position, enabling fast quantification. The term
+originates with kallisto; Salmon uses a closely related technique it calls
+*selective alignment*. [12]
 
 **Python** — the general-purpose language Snakemake is built on and written in. [3]
 
@@ -185,7 +187,8 @@ produce a file matching another's input. [6]
 **Rule graph** — the per-*rule* view of a workflow (`--rulegraph`): its structure,
 independent of sample count. Contrast the DAG (per-*job*). [6]
 
-**Salmon** — a fast, bias-aware transcript quantification tool using
+**Salmon** — a fast, bias-aware transcript quantification tool using a
+lightweight-mapping approach (*selective alignment*), closely related to
 pseudoalignment. [12]
 
 **Sample** — one sequenced biological specimen, processed independently through the
